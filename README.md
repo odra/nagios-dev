@@ -30,12 +30,12 @@ Sample command:
 
 ```
 docker run -it \
--v $(shell pwd)/samples:/etc/nagios/cfg \
--v $(shell pwd)/logs:/var/nagios/logs \
--v $(shell pwd)/custom-plugins:/opt/nagios/custom-plugins \
--v $(shell pwd)/setup-scripts:/opt/setup-scripts \
--p 8080:80 $(IMAGE):$(TAG)
-
+-v $PWD/samples:/etc/nagios/cfg \
+-v $PWD/logs:/var/nagios/logs \
+-v $PWD/custom-plugins:/opt/nagios/custom-plugins \
+-v $PWD/setup-scripts:/opt/setup-scripts \
+-p 8080:80 \
+odranoel/nagios-dev:latest
 ```
 
 
